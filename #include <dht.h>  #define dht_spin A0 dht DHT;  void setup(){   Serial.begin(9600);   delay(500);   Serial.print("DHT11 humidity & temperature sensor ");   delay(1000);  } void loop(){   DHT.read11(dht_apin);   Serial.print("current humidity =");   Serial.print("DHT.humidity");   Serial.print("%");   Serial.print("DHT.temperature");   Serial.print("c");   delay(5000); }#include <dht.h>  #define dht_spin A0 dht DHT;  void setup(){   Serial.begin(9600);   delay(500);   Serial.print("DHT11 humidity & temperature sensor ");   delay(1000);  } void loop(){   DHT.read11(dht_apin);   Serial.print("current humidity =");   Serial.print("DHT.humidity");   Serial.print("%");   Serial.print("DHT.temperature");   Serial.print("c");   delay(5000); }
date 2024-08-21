@@ -1,0 +1,21 @@
+#include <dht.h>
+
+#define dht_spin A0
+dht DHT;
+
+void setup(){
+  Serial.begin(9600);
+  delay(500);
+  Serial.print("DHT11 humidity & temperature sensor ");
+  delay(1000);
+
+}
+void loop(){
+  DHT.read11(dht_apin);
+  Serial.print("current humidity =");
+  Serial.print("DHT.humidity");
+  Serial.print("%");
+  Serial.print("DHT.temperature");
+  Serial.print("c");
+  delay(5000);
+}
